@@ -28,8 +28,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun init() {
         val adapter = CharacterAdapter()
-        binding.recyclerView.adapter = adapter
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.apply {
+            recyclerView.adapter = adapter
+            recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+        }
     }
 
     private fun getCharacters() {
